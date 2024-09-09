@@ -10,7 +10,7 @@ import {
 } from "../sharedStyles/Form";
 import { useForm } from "react-hook-form";
 
-const API_URL = "http://localhost:8181";
+const API_URL = "https://backend-ho-timetable-management.onrender.com";
 
 const GenerateTimetable = () => {
   const [weekStart, setWeekStart] = useState("");

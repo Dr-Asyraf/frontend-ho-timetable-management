@@ -9,21 +9,7 @@ import {
   sectionStyle,
 } from "../sharedStyles/Form";
 
-const API_URL = "http://localhost:8181";
-
-// function LeaderDashboard() {
-//   const navigate = useNavigate();
-//   function navigateToHome() {
-//     navigate("/");
-//   }
-//   return (
-//     <div>
-//       <Header />
-//       <h1>Leader Dashboard</h1>
-//       <button onClick={navigateToHome}>Back to Home</button>
-//     </div>
-//   );
-// }
+const API_URL = "https://backend-ho-timetable-management.onrender.com";
 
 const LeaderDashboard = () => {
   const [username, setUsername] = useState("");

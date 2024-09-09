@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { postApi } from "../utils/api";
 import Cookies from "js-cookie";
 
-const API_URL = "http://localhost:8181";
+const API_URL = "https://backend-ho-timetable-management.onrender.com";
 
 function Login() {
   const { register, handleSubmit, reset } = useForm();

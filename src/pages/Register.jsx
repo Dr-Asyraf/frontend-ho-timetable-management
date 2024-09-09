@@ -9,7 +9,7 @@ import {
 import { useForm } from "react-hook-form";
 import { postApi } from "../utils/api";
 
-const API_URL = "http://localhost:8181";
+const API_URL = "https://backend-ho-timetable-management.onrender.com";
 
 function Register() {
   const { register, handleSubmit, reset } = useForm();
