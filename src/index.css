@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: monospace;
+}
+
+div.hero {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+div.hero > h1 {
+  font-size: 8rem;
+  color: #5402a0;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+button.primary {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+}
+
+button.primary-black {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+
+button.primary-yellow {
+  background-color: #cccf04;
+  color: #ffffff;
+  border: none;
+}
+
+button.primary-red {
+  background-color: #bb0606;
+  color: #ffffff;
+  border: none;
+}
+
+button.primary-green {
+  background-color: #14a002;
+  color: #ffffff;
+  border: none;
+}
+
+button.primary-blue {
+  background-color: #0804d4;
+  color: #ffffff;
+  border: none;
+}
+
+button.primary-purple {
+  background-color: #5402a0;
+  color: #ffffff;
+  border: none;
+}
+
+button.outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: semibold;
+}
+
+input {
+  all: unset;
+  padding: 1rem 0.6rem;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  border: 1px solid #000000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.6rem;
+  border: 1px solid #000000;
+}
+
+table th {
+  background-color: #5402a0;
+  color: #ffffff;
+}
+
+table td {
+  background-color: #ffffff;
+  color: #000000;
+}
