@@ -16,6 +16,7 @@ import Cookie from "js-cookie";
 import Emergency from "./pages/Emergency";
 import ConfirmReplacement from "./pages/EmergencySuggestions";
 import GenerateTimetable from "./pages/GenerateTimetable";
+import AddNewWard from "./pages/Ward";
 
 function AppRoutes() {
   return (
@@ -31,6 +32,7 @@ function AppRoutes() {
         </Route>
         <Route path="/leaderDashboard" element={<LeaderRoutes />}>
           <Route index element={<LeaderDashboard />} />
+          <Route path="/leaderDashboard/ward" element={<AddNewWard />} />
           <Route
             path="/leaderDashboard/emergency/absent"
             element={<Emergency />}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Header from "../components/Header";
 import {
   formContainer,
@@ -13,8 +14,10 @@ const API_URL = "https://backend-ho-timetable-management.onrender.com";
 
 function Register() {
   const { register, handleSubmit, reset } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
 
   async function registerApi(data) {
+    setIsLoading(true);
     try {
       const res = await postApi(`${API_URL}/register`, data);
       if (!res.ok) {
@@ -28,6 +31,9 @@ function Register() {
       reset();
     } catch (error) {
       console.error("Error at registerApi");
+    } finally {
+      console.log("Register API completed");
+      setIsLoading(false);
     }
   }
 
@@ -58,8 +64,12 @@ function Register() {
               <input {...register("join_date")} type="date" />
             </div>
             <div>
-              <button className="primary-purple" type="submit">
-                Register
+              <button
+                className="primary-purple"
+                type="submit"
+                disabled={isLoading}
+              >
+                {isLoading ? "Loading..." : "Register"}
               </button>
               <span>
                 {" "}

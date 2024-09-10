@@ -33,3 +33,9 @@ export const sectionStyle = {
   height: "80vh",
   padding: "0 1rem",
 };
+
+export const leaderStyle = {
+  display: "flex",
+  flexDirection: "column",
+  backgroundColor: "#5402a0",
+};

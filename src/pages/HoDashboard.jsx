@@ -4,6 +4,13 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {
+  formContainer,
+  inputContainer,
+  leaderStyle,
+  sectionBorder,
+  sectionContainer,
+} from "../sharedStyles/Form";
 
 const API_URL = "https://backend-ho-timetable-management.onrender.com";
 
@@ -29,6 +36,10 @@ const HoDashboard = () => {
     navigate("/leaderDashboard/generate");
   }
 
+  function handleNavigateToWard() {
+    navigate("/leaderDashboard/ward");
+  }
+
   function handleNavigateToEmergency() {
     navigate("/leaderDashboard/emergency/absent");
   }
@@ -49,52 +60,63 @@ const HoDashboard = () => {
     <div>
       <Header />
       {role === "Leader" ? (
-        <div>
-          <button
-            className="primary-blue"
-            style={{ padding: "1rem", margin: "2rem" }}
-            onClick={handleNavigateToLeaderDashboard}
-          >
-            Leader Dashboard
-          </button>
-          <button
-            className="primary-green"
-            style={{ padding: "1rem", margin: "2rem" }}
-            onClick={handleNavigateToGenerate}
-          >
-            Generate Timetable
-          </button>
-          <button
-            className="primary-red"
-            style={{ padding: "1rem", margin: "2rem" }}
-            onClick={handleNavigateToEmergency}
-          >
-            Emergency
-          </button>
+        <div style={sectionContainer}>
+          <div style={leaderStyle}>
+            <button
+              className="primary-blue"
+              style={{ padding: "1rem", margin: "2rem" }}
+              onClick={handleNavigateToLeaderDashboard}
+            >
+              Leader Dashboard
+            </button>
+            <button
+              className="primary-yellow"
+              style={{ padding: "1rem", margin: "2rem" }}
+              onClick={handleNavigateToWard}
+            >
+              Add new ward
+            </button>
+            <button
+              className="primary-green"
+              style={{ padding: "1rem", margin: "2rem" }}
+              onClick={handleNavigateToGenerate}
+            >
+              Generate Timetable
+            </button>
+            <button
+              className="primary-red"
+              style={{ padding: "1rem", margin: "2rem" }}
+              onClick={handleNavigateToEmergency}
+            >
+              Emergency
+            </button>
+          </div>
         </div>
       ) : null}
 
-      <div style={{ padding: "2rem" }}>
-        <h2 style={{ marginBottom: "1.5rem" }}>Your Shifts for the Week</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Shift</th>
-              <th>Ward</th>
-            </tr>
-          </thead>
-          <tbody>
-            {shifts.map((shift) => (
-              <tr key={shift.shift_id}>
-                <td>{shift.date}</td>
-                <td>{shift.shift_type}</td>
-                <td>{shift.ward_name}</td>
+      {role === "HO" ? (
+        <div style={{ padding: "2rem" }}>
+          <h2 style={{ marginBottom: "1.5rem" }}>Your Shifts for the Week</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Shift</th>
+                <th>Ward</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {shifts.map((shift) => (
+                <tr key={shift.shift_id}>
+                  <td>{shift.date}</td>
+                  <td>{shift.shift_type}</td>
+                  <td>{shift.ward_name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : null}
     </div>
   );
 };
