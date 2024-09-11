@@ -1,10 +1,25 @@
-# React + Vite
+# Frontend HO Timetable Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A timetable management system made for housemanship doctors (HOs) in a hospital department, adhering to specific shift rules and accommodating last-minute changes.
+This timetable management system is built with React + Vite.
+This project allows leaders to generate timetable by weeks for all HOs and leaders can manually adjust the shifts generated. Leaders can also add new wards into the system.
+HOs can view their timetable of the current week
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# frontend-ho-timetable-management
-# frontend-ho-timetable-management
+Leader:
+- **Generate Timetable**: Generate a weekly timetable following the specific shift rules for all HOs.
+- **Mark a HO as absent and get suggestions**: Leader can mark any HO absent and the system will suggest replacement based on the specific shift rules
+- **List all shifts**: List all the shifts of a specific HO
+- **Edit & Delete shifts**: Edit and delete specific shifts of any HO
+
+HO:
+- **View Timetable**: HOs can view their weekly shifts
+
+## Prerequisites
+
+- React + Vite
+
+## Usage
+- Deployed on render.com: https://frontend-ho-timetable-management.onrender.com
+- Backend: https://backend-ho-timetable-management.onrender.com
